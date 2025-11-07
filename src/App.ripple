@@ -1,0 +1,16 @@
+import { track } from 'ripple';
+import { Router, Route } from 'ripple-router';
+
+import { Home } from './routes/Home.ripple';
+import { About } from './routes/About.ripple';
+import { Header } from './components/header.ripple';
+
+export component App() {
+	<div class="bg-gray-900 min-w-screen min-h-screen text-white">
+		<Router>
+			<Header />
+			<Route path="/" element={Home} />
+			<Route path="/about" element={About} />
+		</Router>
+	</div>
+}

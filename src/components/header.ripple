@@ -1,0 +1,25 @@
+import { track } from 'ripple';
+import { Router, Route, Link } from 'ripple-router';
+
+export component Header() {
+	const pages = [
+		{ label: 'Home', path: '/' },
+		{ label: 'About', path: '/about' },
+	];
+
+	<header class="flex justify-between items-center p-6 border-b border-gray-800 ">
+		<img
+			src="https://tailwindcss.com/plus-assets/img/logos/mark.svg?color=indigo&shade=500"
+			alt=""
+			class="h-8 w-auto"
+		/>
+		<nav class="flex gap-12">
+			for (const page of pages) {
+				<Link to={page.path}>
+					<button class="cursor-pointer">{page.label}</button>
+				</Link>
+			}
+		</nav>
+		<div class="flex space-x-4" />
+	</header>
+}

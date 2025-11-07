@@ -1,0 +1,65 @@
+import { track } from 'ripple';
+import { Router, Route, Link } from 'ripple-router';
+import { Header } from '../components/header.ripple';
+import { Button } from '../components/button.ripple';
+
+export component Home() {
+	<div class="container flex flex-col items-center gap-6 p-6">
+		<h1 class="mt-2 text-5xl tracking-tight sm:text-6xl text-pretty">{'Welcome to Ripple!'}</h1>
+		<div class="counter">
+			let count = track(0);
+
+			<div class="flex items-center justify-center">
+				<Button onClick={() => @count++}>{'+'}</Button>
+				<span class="count">{@count}</span>
+				<Button onClick={() => @count--}>{'-'}</Button>
+			</div>
+		</div>
+		<div>
+			<p>{'This is a basic Ripple application template.'}</p>
+			<p>
+				{'Edit '}
+				<code>{'src/App.ripple'}</code>
+				{' to get started.'}
+			</p>
+		</div>
+	</div>
+
+	<style>
+		.container {
+			text-align: center;
+			font-family: "Arial", sans-serif;
+		}
+
+		p {
+			margin: 12px 0;
+			font-family: "Arial", sans-serif;
+		}
+
+		code {
+			background: #f4f4f4;
+			padding: 2px 6px;
+			border-radius: 4px;
+			font-family: "Courier New", monospace;
+			color: #333;
+		}
+
+		button {
+			font-size: 1.5em;
+			padding: 6px 12px;
+			margin: 0 6px;
+			cursor: pointer;
+			border: none;
+			font-family: "Courier New", monospace;
+		}
+
+		button {
+			background-color: #e0e0e0;
+		}
+
+		.count {
+			margin: 0 12px;
+			font-size: 1.5em;
+		}
+	</style>
+}
